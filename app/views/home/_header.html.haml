@@ -1,0 +1,9 @@
+.header-inner
+  .header-inner__logo
+    = link_to("kattayo!", "/")
+  .header-inner__nav-bar
+    %ul.header-inner__nav-bar__member-menu-list
+      %li
+        = link_to("登録情報", "#", class:"header-inner__nav-bar__member-menu-list__info")
+      %li
+        = link_to("ログアウト", "#", class:"header-inner__nav-bar__member-menu-list__sign-out")
