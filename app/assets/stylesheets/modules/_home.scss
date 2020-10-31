@@ -33,3 +33,57 @@ a {
     }
   }
 }
+
+.top-page__head {
+  width: 100%;
+  &__box {
+    width: 300px;
+    margin: auto;
+    font-weight: bold;
+    padding: 30px 0 20px;
+    &__amount {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    &__current {
+      font-size: 20px;
+    }
+    &__remaining {
+      font-size: 20px;
+    }
+  }
+}
+
+.top-page__categories {
+  max-width: 1200px;
+  margin: 10px auto;
+  background-color: red;
+  &__titile {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+  &__list {
+    display: flex;
+    &__box {
+      width: 20%;
+    }
+  }
+}
+
+.top-page__items {
+  max-width: 1200px;
+  margin: 10px auto;
+  background-color: yellow;
+  &__titile {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+  &__list {
+    display: flex;
+    &__box {
+      width: 20%;
+    }
+  }
+}
