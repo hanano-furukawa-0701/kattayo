@@ -8,7 +8,7 @@ a {
 
 .header-inner {
   width: 100%;
-  height: 80px;
+  height: 85px;
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
@@ -16,7 +16,7 @@ a {
   z-index: 1;
   &__logo {
     font-size: 34px;
-    line-height: 80px;
+    line-height: 85px;
     font-weight: bold;
     a {
       color: black;
@@ -38,12 +38,12 @@ a {
 
 .top-page__head {
   width: 100%;
-  padding-top: 80px;
+  padding-top: 85px;
   &__box {
     width: 300px;
     margin: auto;
     font-weight: bold;
-    padding: 30px 0 20px;
+    padding: 50px 0 30px;
     &__amount {
       font-size: 32px;
       margin-bottom: 10px;
@@ -59,7 +59,7 @@ a {
 
 .top-page__categories {
   max-width: 1200px;
-  margin: 10px auto;
+  margin: 20px auto 10px;
   padding: 0 10px;
   &__titile {
     font-size: 20px;
@@ -70,12 +70,11 @@ a {
     display: flex;
     &__box {
       width: 20%;
-      height: 100px;
       margin: 5px;
-      padding: 5px;
+      padding: 5px 5px 10px;
       background: lightgrey;
+      text-align: center;
       &__name {
-        text-align: center;
         margin: 5px;
         font-weight: bold;
       }
@@ -110,7 +109,7 @@ a {
 
 .footer-btn__items {
   width: 100%;
-  height: 60px;
+  height: 70px;
   margin-top: 20px;
   padding: 0 30px;
   position: fixed;
@@ -121,7 +120,9 @@ a {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    line-height: 60px;
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 20px;
     a {
       color: black;
     }
