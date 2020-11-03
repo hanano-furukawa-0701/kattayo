@@ -2,3 +2,29 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+.items-page {
+  width: 100%;
+  padding-top: 115px;
+  display: flex;
+  &__left-bar {
+    width: 30%;
+    &__categories {
+      li {
+        height: 60px;
+        line-height: 60px;
+        padding-left: 30px;
+        border: 1px solid #333;
+      }
+      a {
+        color: #333;
+      }
+    }
+  }
+  &__main {
+    width: 70%;
+  }
+}
