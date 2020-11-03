@@ -8,23 +8,26 @@ a {
 
 .items-page {
   width: 100%;
-  padding-top: 115px;
+  padding-top: 95px;
   display: flex;
   &__left-bar {
-    width: 30%;
+    width: 280px;
+    margin-left: 30px;
+    border: 1px solid lightgray;
     &__categories {
       li {
         height: 60px;
         line-height: 60px;
-        padding-left: 30px;
-        border: 1px solid #333;
+        border-top: 1px solid lightgray;
+        padding: 0 10px;
       }
       a {
         color: #333;
+        font-size: 18px;
       }
     }
   }
   &__main {
-    width: 70%;
+  
   }
 }
