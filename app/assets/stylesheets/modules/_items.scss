@@ -11,7 +11,8 @@ a {
   padding-top: 95px;
   display: flex;
   &__left-bar {
-    width: 280px;
+    width: 300px;
+    height: 100%;
     margin-left: 30px;
     border: 1px solid lightgray;
     &__categories {
@@ -28,6 +29,32 @@ a {
     }
   }
   &__main {
-  
+    width: 100%;
+    margin: 5px 40px 30px 30px;
+    &__title {
+      text-align: center;
+      height:40px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 40px;
+    }
+    &__list {
+      margin-top: 10px;
+      &__box {
+        max-width: 800px;
+        margin: 0 auto;
+        border: 1px solid #333;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+        &__date {
+          text-align: left;
+        }
+        &__name {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+      }
+    }
   }
 }

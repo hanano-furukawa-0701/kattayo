@@ -8,15 +8,16 @@ a {
 
 .header-inner {
   width: 100%;
-  height: 85px;
+  height: 75px;
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
+  background-color: wheat;
   &__logo {
     font-size: 34px;
-    line-height: 85px;
+    line-height: 75px;
     font-weight: bold;
     a {
       color: black;
@@ -25,7 +26,7 @@ a {
   &__nav-bar {
     &__member-menu-list {
       display: flex;
-      padding-top: 50px;
+      padding-top: 40px;
       a {
         color: #333;
       }
@@ -38,9 +39,10 @@ a {
 
 .top-page__head {
   width: 100%;
-  padding-top: 85px;
+  padding-top: 75px;
+  display: flex;
+  align-items: center;
   &__box {
-    width: 300px;
     margin: auto;
     font-weight: bold;
     padding: 50px 0 30px;
@@ -109,18 +111,19 @@ a {
 
 .footer-btn__items {
   width: 100%;
-  height: 70px;
+  height: 60px;
   margin-top: 20px;
   padding: 0 30px;
   position: fixed;
   bottom: 0;
-  z-index: 1;
+  z-index: 100;
+  background-color:wheat;
   &__list {
     max-width: 900px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    line-height: 70px;
+    line-height: 60px;
     font-weight: bold;
     font-size: 20px;
     a {
