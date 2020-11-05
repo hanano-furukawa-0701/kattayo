@@ -1,0 +1,14 @@
+-# .header
+-#   = render "home/header"
+
+.items-new
+  .items-new__title
+    %h2 購入品登録
+  .items-new__form
+    = form_with url: items_path, method: :post do |f|
+      .items-new__form__name
+        = f.label :購入品名, class: 'items-new__form__name__label'
+      .items-new__form__category
+      .items-new__form__price
+      .items-new__form__text
+  
