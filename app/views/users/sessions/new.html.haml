@@ -4,15 +4,15 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .content__body__details  
         .field
-          = f.label :email
+          = f.label :メールアドレス
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email"
         .field
-          = f.label :password
+          = f.label :パスワード
           %br/
           = f.password_field :password, autocomplete: "current-password"
         .actions
-          = f.submit "Log in"
+          = f.submit "ログイン"
     .content__body__sign-up
       アカウントをお持ちでない方はこちら
       .content__body__sign-up__button
