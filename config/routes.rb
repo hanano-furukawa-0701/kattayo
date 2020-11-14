@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :items, only: [:index, :new, :create]
+
+  resources :categories, only: [:new, :create]
 end

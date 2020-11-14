@@ -7,8 +7,8 @@
       = render "users/shared/error_messages", resource: @target_amount
       .content__body__details
         .field
-          = f.label :1ヶ月の目標支出額は？
+          = f.label :月間目標支出額
           %br/
-          = f.text_field :price, autofocus: true, autocomplete: "name"
+          = f.text_field :price, autofocus: true, autocomplete: "price"
         .actions
           = f.submit "登録する"

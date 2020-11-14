@@ -1,0 +1,15 @@
+.content
+  .content__body
+    %h2.content__body__title カテゴリー追加
+    = form_with url: categories_path, method: :post do |f|
+      .content__body__details
+        .field
+          = f.label :カテゴリー名
+          %br/
+          = f.text_field :name, autofocus: true, autocomplete: "name"
+        .field
+          = f.label :月間目標支出額
+          %br/
+          = f.text_field :target_amount, autofocus: true, autocomplete: "target_amount"
+        .actions
+          = f.submit "追加する"
