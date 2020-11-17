@@ -37,40 +37,14 @@
   .top-page__items__titile
     購入品一覧
   .top-page__items__list
+  - @items.each do |item|
     .top-page__items__list__box
       .top-page__items__list__box__name
-        カレーの作り方
+        = item.name
       .top-page__items__list__box__date
-        2020/02/29
+        = item.created_at
       .top-page__items__list__box__price
-        1,500円
-    .top-page__items__list__box
-      .top-page__items__list__box__name
-        カレーの作り方
-      .top-page__items__list__box__date
-        2020/02/29
-      .top-page__items__list__box__price
-        1,500円
-    .top-page__items__list__box
-      .top-page__items__list__box__name
-        カレーの作り方
-      .top-page__items__list__box__date
-        2020/02/29
-      .top-page__items__list__box__price
-        1,500円
-    .top-page__items__list__box
-      .top-page__items__list__box__name
-        カレーの作り方
-      .top-page__items__list__box__date
-        2020/02/29
-      .top-page__items__list__box__price
-        1,500円
-    .top-page__items__list__box
-      .top-page__items__list__box__name
-        カレーの作り方
-      .top-page__items__list__box__date
-        2020/02/29
-      .top-page__items__list__box__price
-        1,500円
+        = item.price
+        円
     
   

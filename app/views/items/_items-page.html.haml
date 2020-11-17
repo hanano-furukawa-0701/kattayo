@@ -14,58 +14,17 @@
 .items-page__main
   %h2.items-page__main__title 新着購入品
   .items-page__main__list
+  - @items.each do |item|
     .items-page__main__list__box
       .items-page__main__list__box__date
-        2020/02/29
+        = item.created_at
       .items-page__main__list__box__name
-        カレーの本
+        = item.name
       .items-page__main__list__box__category
         書籍
       .items-page__main__list__box__price
-        1,500円
+        = item.price
+        円
       .items-pafe__main__list__box__text
-        カレーをスパイスから作りたい
-    .items-page__main__list__box
-      .items-page__main__list__box__date
-        2020/02/29
-      .items-page__main__list__box__name
-        カレーの本
-      .items-page__main__list__box__category
-        書籍
-      .items-page__main__list__box__price
-        1,500円
-      .items-pafe__main__list__box__text
-        カレーをスパイスから作りたい
-    .items-page__main__list__box
-      .items-page__main__list__box__date
-        2020/02/29
-      .items-page__main__list__box__name
-        カレーの本
-      .items-page__main__list__box__category
-        書籍
-      .items-page__main__list__box__price
-        1,500円
-      .items-pafe__main__list__box__text
-        カレーをスパイスから作りたい
-    .items-page__main__list__box
-      .items-page__main__list__box__date
-        2020/02/29
-      .items-page__main__list__box__name
-        カレーの本
-      .items-page__main__list__box__category
-        書籍
-      .items-page__main__list__box__price
-        1,500円
-      .items-pafe__main__list__box__text
-        カレーをスパイスから作りたい
-    .items-page__main__list__box
-      .items-page__main__list__box__date
-        2020/02/29
-      .items-page__main__list__box__name
-        カレーの本
-      .items-page__main__list__box__category
-        書籍
-      .items-page__main__list__box__price
-        1,500円
-      .items-pafe__main__list__box__text
-        カレーをスパイスから作りたい
+        = item.text
+    
