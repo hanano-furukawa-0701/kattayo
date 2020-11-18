@@ -11,27 +11,16 @@
   .top-page__categories__titile
     カテゴリー別
   .top-page__categories__list
+  - @categories.each do |category|
     .top-page__categories__list__box
       .top-page__categories__list__box__name
-        書籍
+        = caategory.name
       .top-page__categories__list__box__amount
-        目標 10,000円
+        目標 
+        = category.target_amount
       .top-page__categories__list__box__total-price
         現在 5,000円
-    .top-page__categories__list__box
-      .top-page__categories__list__box__name
-        書籍
-      .top-page__categories__list__box__amount
-        目標 10,000円
-      .top-page__categories__list__box__total-price
-        現在 5,000円
-    .top-page__categories__list__box
-      .top-page__categories__list__box__name
-        書籍
-      .top-page__categories__list__box__amount
-        目標 10,000円
-      .top-page__categories__list__box__total-price
-        現在 5,000円
+    
     
 .top-page__items
   .top-page__items__titile

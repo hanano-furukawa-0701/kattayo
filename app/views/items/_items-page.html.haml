@@ -1,15 +1,9 @@
 .items-page__left-bar
   %ul.items-page__left-bar__categories
+  - @categories.each do |category|
     %li
-      = link_to("書籍","#",class:"items-page__left-bar__categories__category")
-    %li
-      = link_to("書籍","#",class:"items-page__left-bar__categories__category")
-    %li
-      = link_to("書籍","#",class:"items-page__left-bar__categories__category")
-    %li
-      = link_to("書籍","#",class:"items-page__left-bar__categories__category")
-    %li
-      = link_to("書籍","#",class:"items-page__left-bar__categories__category")
+      = link_to(category.name,"#",class:"items-page__left-bar__categories__category")
+    
 
 .items-page__main
   %h2.items-page__main__title 新着購入品

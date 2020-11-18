@@ -1,12 +1,16 @@
 .content
   .content__body
     %h2.content__body__title 購入品登録
-    = form_with url: categories_path, method: :post do |f|
+    = form_with url: items_path, method: :post do |f|
       .content__body__details
         .field
           = f.label :購入品名
           %br/
           = f.text_field :name, autofocus: true, autocomplete: "name"
+        .field
+          = f.label :カテゴリー
+          %br/
+          = f.collection_select :category_id, Category.all, :id, :name, include_blank: true, promt: "選択してください"
         .field
           = f.label :価格
           %br/
