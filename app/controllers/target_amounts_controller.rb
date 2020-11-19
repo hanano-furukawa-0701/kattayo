@@ -1,0 +1,2 @@
+class TargetAmountsController < ApplicationController
+end
