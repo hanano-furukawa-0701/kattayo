@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :items, only: [:index, :new, :create]
+  resources :items, only: [:index, :new, :create] do
+    collection do
+      get 'category', to: 'items#category'
+    end
+  end
 
   resources :categories, only: [:new, :create]
 end
