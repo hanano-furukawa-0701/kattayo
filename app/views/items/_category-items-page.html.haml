@@ -6,7 +6,8 @@
     
 
 .items-page__main
-  %h2.items-page__main__title 新着購入品
+  %h2.items-page__main__title 
+    = category.name
   .items-page__main__list
   - @items.each do |item|
     .items-page__main__list__box
@@ -14,11 +15,8 @@
         = item.created_at
       .items-page__main__list__box__name
         = item.name
-      .items-page__main__list__box__category
-        = item.category.name
       .items-page__main__list__box__price
         = item.price
         円
       .items-pafe__main__list__box__text
         = item.text
-    

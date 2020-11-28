@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.limit(5).order('created_at DESC')
     @categories = Category.order('target_amount DESC')
+    @items = Item.limit(5).order('created_at DESC')
   end
 
   def new
@@ -12,6 +12,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
   end
+
+  def category
+    @categories = Category.order('target_amount DESC')
+    @category = Category.find(params[:id])
+    @items = @category.items.order('created_at DESC')
+  end
+
 
   private
 
