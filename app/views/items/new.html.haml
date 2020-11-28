@@ -18,7 +18,7 @@
         .field
           = f.label :メモ
           %br/
-          = f.text_field :text, autofocus: true, autocomplete: "text"
+          = f.text_area :text, autofocus: true, autocomplete: "text", class: "content__body__details__text"
         .actions
           = f.submit "登録する"
   
