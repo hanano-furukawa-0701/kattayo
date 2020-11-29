@@ -7,8 +7,9 @@
       = render "users/shared/error_messages", resource: @target_amount
       .content__body__details
         .field
-          = f.label :月間目標支出額
+          = f.label :一か月にいくらまで使う？
           %br/
-          = f.text_field :price, autofocus: true, autocomplete: "price"
+          = f.text_field :price, autofocus: true, autocomplete: "price", class: "content__body__details__price"
+          円
         .actions
           = f.submit "登録する"
