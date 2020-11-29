@@ -26,11 +26,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_target_amounts and return
     end
     @user.build_target_amount(@target_amount.attributes)
-    @user.save
+    @user.save!
+    session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
   end
 
-  protected
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
   def target_amount_params
     params.require(:target_amount).permit(:price)
   end
