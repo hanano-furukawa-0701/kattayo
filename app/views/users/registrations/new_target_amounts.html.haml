@@ -3,7 +3,7 @@
 .content
   .content__body
     %h2.content__body__title 目標月間支出額の登録
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for(@target_amount, url: target_amounts_path, method: :post) do |f|
       = render "users/shared/error_messages", resource: @target_amount
       .content__body__details
         .field
