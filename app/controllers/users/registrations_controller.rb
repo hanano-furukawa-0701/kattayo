@@ -15,19 +15,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:wassword]
     @target_amount = @user.build_target_amount
-    render :new_target_amounts
+    render :new_target_amount
   end
 
-  def create_target_amount
+  def create_target_amounts
     @user = User.new(session["devise.regist_data"]["user"])
     @target_amount = TargetAmount.new(target_amount_params)
     unless @target_amount.valid?
       flash.now[:alert] = @target_amount.errors.full_messages
-      render :new_target_amounts and return
+      render :new_target_amount and return
     end
     @user.build_target_amount(@target_amount.attributes)
     @user.save!
-    session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
   end
 
