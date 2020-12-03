@@ -6,6 +6,14 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    if @category.valid?
+      @category.save
+      redirect_to root_path
+      flash[:notice] = "カテゴリーを追加しました"
+    else
+      render :new
+      flash[:alert] = "カテゴリーが追加できませんでした"
+    end
   end
 
   private
