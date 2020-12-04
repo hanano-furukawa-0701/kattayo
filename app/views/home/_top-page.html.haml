@@ -38,7 +38,7 @@
       .top-page__items__list__box__name
         = item.name
       .top-page__items__list__box__date
-        = item.created_at
+        = item.created_at.strftime('%Y/%m/%d')
       .top-page__items__list__box__price
         = item.price
         円
