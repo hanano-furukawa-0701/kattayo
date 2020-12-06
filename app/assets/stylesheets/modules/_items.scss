@@ -6,6 +6,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 .items-page {
   width: 100%;
   padding-top: 95px;
@@ -16,17 +20,17 @@ a {
     margin-left: 30px;
     margin-bottom: 25px;
     border: 1px solid lightgray;
-    &__categories {
-      li {
-        height: 60px;
-        line-height: 60px;
-        border-top: 1px solid lightgray;
-        padding: 0 10px;
-      }
+    li {
+      height: 60px;
+      line-height: 60px;
+      border-top: 1px solid lightgray;
+      padding: 0 10px;
       a {
         color: #333;
         font-size: 18px;
       }
+    }
+    &__categories {
     }
   }
   &__main {
