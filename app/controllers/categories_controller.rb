@@ -16,6 +16,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show
+    @categories = Category.order('target_amount DESC')
+    @category = Category.find(params[:id])
+    @items = @category.items.order('created_at DESC')
+    
+  end
+
+
   private
   def category_params
     params.require(:category).permit(:name, :target_amount).merge(user_id: current_user.id)

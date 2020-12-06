@@ -21,13 +21,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def category
-    @categories = Category.order('target_amount DESC')
-    @category = Category.find(params[:id])
-    @items = @category.items.order('created_at DESC')
-  end
-
-
+  
   private
 
   def item_params
