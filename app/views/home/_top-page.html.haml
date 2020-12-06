@@ -17,30 +17,30 @@
   .top-page__categories__titile
     カテゴリー別
   .top-page__categories__list
-  - @categories.each do |category|
-    .top-page__categories__list__box
-      .top-page__categories__list__box__name
-        = category.name
-      .top-page__categories__list__box__amount
-        月目標 
-        = category.target_amount
-        円
-      .top-page__categories__list__box__total-price
-        現在 5,000円
+    - @categories.each do |category|
+      .top-page__categories__list__box
+        .top-page__categories__list__box__name
+          = category.name
+        .top-page__categories__list__box__amount
+          月目標 
+          = category.target_amount
+          円
+        .top-page__categories__list__box__total-price
+          現在 5,000円
     
     
 .top-page__items
   .top-page__items__titile
     購入品一覧
   .top-page__items__list
-  - @items.each do |item|
-    .top-page__items__list__box
-      .top-page__items__list__box__name
-        = item.name
-      .top-page__items__list__box__date
-        = item.created_at.strftime('%Y/%m/%d')
-      .top-page__items__list__box__price
-        = item.price
-        円
+    - @items.each do |item|
+      .top-page__items__list__box
+        .top-page__items__list__box__name
+          = item.name
+        .top-page__items__list__box__date
+          = item.created_at.strftime('%Y/%m/%d')
+        .top-page__items__list__box__price
+          = item.price
+          円
     
   
