@@ -19,8 +19,7 @@ class CategoriesController < ApplicationController
   def show
     @categories = Category.order('target_amount DESC')
     @category = Category.find(params[:id])
-    @items = @category.items.order('created_at DESC')
-    
+    @items = @category.items.order('created_at DESC')  
   end
 
 

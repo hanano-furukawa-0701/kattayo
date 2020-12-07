@@ -1,22 +1,29 @@
-.items-page__left-bar
-  %ul.items-page__left-bar__categories
-  - @categories.each do |category|
-    %li
-      = link_to(category.name, category_path(category.id), class:"items-page__left-bar__categories__category")
-    
+.header
+  = render "home/header"
 
-.items-page__main
-  %h2.items-page__main__title 
-    = category.name
-  .items-page__main__list
-  - @items.each do |item|
-    .items-page__main__list__box
-      .items-page__main__list__box__date
-        = item.created_at.strftime('%Y/%m/%d')
-      .items-page__main__list__box__name
-        = item.name
-      .items-page__main__list__box__price
-        = item.price
-        円
-      .items-pafe__main__list__box__text
-        = item.text
+.items-page 
+  .items-page__left-bar
+    %ul.items-page__left-bar__categories
+    - @categories.each do |category|
+      %li
+        = link_to(category.name, category_path(category.id), class:"items-page__left-bar__categories__category")
+      
+
+  .items-page__main
+    %h2.items-page__main__title 
+      = @category.name
+    .items-page__main__list
+    - @items.each do |item|
+      .items-page__main__list__box
+        .items-page__main__list__box__date
+          = item.created_at.strftime('%Y/%m/%d')
+        .items-page__main__list__box__name
+          = item.name
+        .items-page__main__list__box__price
+          = item.price
+          円
+        .items-pafe__main__list__box__text
+          = item.text
+
+.footer-btn
+  = render "home/footer-btn"
