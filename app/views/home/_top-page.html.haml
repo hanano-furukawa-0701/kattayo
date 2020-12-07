@@ -14,23 +14,24 @@
       円
 
 .top-page__categories
-  .top-page__categories__titile
+  .top-page__categories__title
     カテゴリー別
   .top-page__categories__list
     - @categories.each do |category|
       .top-page__categories__list__box
-        .top-page__categories__list__box__name
-          = category.name
-        .top-page__categories__list__box__amount
-          月目標 
-          = category.target_amount
-          円
-        .top-page__categories__list__box__total-price
-          現在 5,000円
+        = link_to category_path(category.id) do
+          .top-page__categories__list__box__name
+            = category.name
+          .top-page__categories__list__box__amount
+            月目標 
+            = category.target_amount
+            円
+          .top-page__categories__list__box__total-price
+            現在 5,000円
     
     
 .top-page__items
-  .top-page__items__titile
+  .top-page__items__title
     購入品一覧
   .top-page__items__list
     - @items.each do |item|
