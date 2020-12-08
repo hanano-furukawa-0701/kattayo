@@ -1,0 +1,15 @@
+.header
+  = render "home/header"
+.content
+  .content__body
+    %h2.content__body__title 目標月間支出額の変更
+    = form_for(@target_amount, url: target_amount_path) do |f|
+      = render "users/shared/error_messages", resource: @target_amount
+      .content__body__details
+        .field
+          = f.label :一か月にいくらまで使う？
+          %br/
+          = f.text_field :price, autofocus: true, autocomplete: "price", class: "content__body__details__price"
+          円
+        .actions
+          = f.submit "変更する"

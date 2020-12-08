@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :target_amounts, only: [:edit, :update]
+
   resources :items, only: [:index, :new, :create] 
 
   scope :items do
