@@ -1,0 +1,16 @@
+.content
+  .content__body
+    %h2.content__body__title カテゴリー情報変更
+    = form_for(@category, url: category_path) do |f|
+      .content__body__details
+        .field
+          = f.label :カテゴリー名
+          %br/
+          = f.text_field :name, autofocus: true, autocomplete: "name"
+        .field
+          = f.label :一か月にいくらまで使う？
+          %br/
+          = f.text_field :target_amount, autofocus: true, autocomplete: "target_amount", class: "content__body__details__target-amount"
+          円
+        .actions
+          = f.submit "変更する"

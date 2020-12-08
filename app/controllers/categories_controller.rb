@@ -22,6 +22,21 @@ class CategoriesController < ApplicationController
     @items = @category.items.order('created_at DESC')  
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      redirect_to root_path
+      flash[:notice] = "カテゴリー情報を変更しました"
+    else
+      render :edit
+      flash[:alert] = "カテゴリー情報を変更できませんでした"
+    end
+  end
+
 
   private
   def category_params
