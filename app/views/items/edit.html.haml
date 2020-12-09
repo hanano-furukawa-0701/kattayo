@@ -1,0 +1,24 @@
+.content
+  .content__body
+    %h2.content__body__title 購入品情報変更
+    = form_for @item do |f|
+      .content__body__details
+        .field
+          = f.label :購入品名
+          %br/
+          = f.text_field :name, autofocus: true, autocomplete: "name"
+        .field
+          = f.label :カテゴリー
+          %br/
+          = f.collection_select :category_id, Category.all, :id, :name, include_blank: true, promt: "選択してください"
+        .field
+          = f.label :価格
+          %br/
+          = f.text_field :price, autofocus: true, autocomplete: "price"
+          円
+        .field
+          = f.label :メモ
+          %br/
+          = f.text_area :text, autofocus: true, autocomplete: "text", class: "content__body__details__text"
+        .actions
+          = f.submit "変更する"

@@ -21,6 +21,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path
+      flash[:notice] = "購入品情報を変更しました"
+    else
+      render :edit
+      flash[:alert] = "購入品情報を変更できませんでした"
+    end
+  end
+
   
   private
 
