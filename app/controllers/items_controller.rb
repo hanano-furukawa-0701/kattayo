@@ -36,6 +36,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to root_path
+      flash[:notice] = "購入品を削除しました"
+    else
+      flash[:alert] = "購入品を削除できませんでした"
+    end
+  end
+
   
   private
 

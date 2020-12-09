@@ -13,10 +13,10 @@ Rails.application.routes.draw do
 
   resources :target_amounts, only: [:edit, :update]
 
-  resources :items, only: [:index, :new, :create, :edit, :update] 
+  resources :items, only: [:index, :new, :create, :edit, :update, :destroy] 
 
   scope :items do
-    resources :categories, only: [:show, :update]
+    resources :categories, only: [:show, :update, :destroy]
   end
   
 

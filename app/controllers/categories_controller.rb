@@ -37,6 +37,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    if @category.destroy
+      redirect_to root_path
+      flash[:notice] = "カテゴリーを削除しました"
+    else
+      flash[:alert] = "カテゴリーを削除できませんでした"
+    end
+  end
+
 
   private
   def category_params
