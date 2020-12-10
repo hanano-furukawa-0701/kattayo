@@ -6,7 +6,8 @@
     
 
 .items-page__main
-  %h2.items-page__main__title 新着購入品
+  .items-page__main__top-box
+    %h2.items-page__main__top-box__title 新着購入品
   .items-page__main__list
   - @items.each do |item|
     .items-page__main__list__box

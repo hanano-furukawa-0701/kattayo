@@ -10,8 +10,20 @@
       
 
   .items-page__main
-    %h2.items-page__main__title 
-      = @category.name
+    .items-page__main__top-box
+      %h2.items-page__main__top-box__title 
+        = @category.name
+      .items-page__main__top-box__amount
+        月目標
+        = @category.target_amount
+        円
+      .items-page__main__top-box__current
+        現在 5000円
+      .items-page__main__top-box__button
+        .items-page__main__top-box__button__edit
+          = link_to '編集', edit_category_path
+        .items-page__main__top-box__button__destroy
+          = link_to '削除', category_path, method: :delete
     .items-page__main__list
     - @items.each do |item|
       .items-page__main__list__box

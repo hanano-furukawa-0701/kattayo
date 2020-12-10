@@ -36,12 +36,23 @@ li {
   &__main {
     width: 100%;
     margin: 10px 40px 85px 40px;
-    &__title {
+    &__top-box {
       text-align: center;
-      height:40px;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 40px;
+      &__title {
+          height:40px;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 40px;
+      }
+      &__button {
+        width: 100px;
+        margin: 5px auto;
+        display: flex;
+        justify-content: space-between;
+        a {
+          color: orange;
+        }
+      }
     }
     &__list {
       margin-top: 10px;
