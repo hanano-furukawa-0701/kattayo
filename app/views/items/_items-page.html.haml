@@ -7,12 +7,19 @@
 
 .items-page__main
   .items-page__main__top-box
-    %h2.items-page__main__top-box__title 新着購入品
+    .items-page__main__top-box__top
+      %h2.items-page__main__top-box__top__title 新着購入品
   .items-page__main__list
   - @items.each do |item|
     .items-page__main__list__box
-      .items-page__main__list__box__date
-        = item.created_at.strftime('%Y/%m/%d')
+      .items-page__main__list__box__top-box
+        .items-page__main__list__box__top-box__date
+          = item.created_at.strftime('%Y/%m/%d')
+        .items-page__main__list__box__top-box__button
+          .items-page__main__list__box__top-box__button__edit
+            = link_to '編集', edit_item_path(item.id)
+          .items-page__main__list__box__top-box__button__destroy
+            = link_to '削除', item_path(item.id), method: :delete
       .items-page__main__list__box__name
         = item.name
       .items-page__main__list__box__category

@@ -11,24 +11,32 @@
 
   .items-page__main
     .items-page__main__top-box
-      %h2.items-page__main__top-box__title 
-        = @category.name
-      .items-page__main__top-box__amount
-        月目標
-        = @category.target_amount
-        円
-      .items-page__main__top-box__current
-        現在 5000円
-      .items-page__main__top-box__button
-        .items-page__main__top-box__button__edit
-          = link_to '編集', edit_category_path
-        .items-page__main__top-box__button__destroy
-          = link_to '削除', category_path, method: :delete
+      .items-page__main__top-box__top
+        %h2.items-page__main__top-box__top__title 
+          = @category.name
+        .items-page__main__top-box__top__button
+          .items-page__main__top-box__top__button__edit
+            = link_to '編集', edit_category_path
+          .items-page__main__top-box__top__button__destroy
+            = link_to '削除', category_path, method: :delete
+      .items-page__main__top-box__details
+        .items-page__main__top-box__details__amount
+          月目標
+          = @category.target_amount
+          円
+        .items-page__main__top-box__details__current
+          現在 5000円
     .items-page__main__list
     - @items.each do |item|
       .items-page__main__list__box
-        .items-page__main__list__box__date
-          = item.created_at.strftime('%Y/%m/%d')
+        .items-page__main__list__box__top-box
+          .items-page__main__list__box__top-box__date
+            = item.created_at.strftime('%Y/%m/%d')
+          .items-page__main__list__box__top-box__button
+            .items-page__main__list__box__top-box__button__edit
+              = link_to '編集', edit_item_path
+            .items-page__main__list__box__top-box__button__destroy
+              = link_to '削除', item_path, method: :delete
         .items-page__main__list__box__name
           = item.name
         .items-page__main__list__box__price
