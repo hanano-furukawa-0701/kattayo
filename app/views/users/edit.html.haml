@@ -1,1 +1,16 @@
-k
+.content
+  .content__body
+    %h2.content__body__title 登録情報編集
+    = form_for(@user, url: user_registration_path, method: :post) do |f|
+      = render "users/shared/error_messages", resource: @user
+      .content__body__details
+        .field
+          = f.label :お名前
+          %br/
+          = f.text_field :name, autofocus: true, autocomplete: "name"
+        .field
+          = f.label :メールアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .actions
+          = f.submit "変更する"
