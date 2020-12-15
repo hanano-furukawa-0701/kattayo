@@ -5,6 +5,6 @@
   - if user_signed_in?
     %ul.header-inner__nav-bar__member-menu-list
       %li
-        = link_to("登録情報", "#", class:"header-inner__nav-bar__member-menu-list__info")
+        = link_to("登録情報編集", edit_user_path(current_user.id), class:"header-inner__nav-bar__member-menu-list__info")
       %li
         = link_to("ログアウト", destroy_user_session_path, method: :derete, class:"header-inner__nav-bar__member-menu-list__sign-out")

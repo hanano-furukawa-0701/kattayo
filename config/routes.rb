@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
+  resources :users, only: [:edit, :update]
+
 
   resources :target_amounts, only: [:edit, :update]
 
