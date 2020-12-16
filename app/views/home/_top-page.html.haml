@@ -4,9 +4,13 @@
   .top-page__head__box
     .top-page__head__box__details
       .top-page__head__box__details__amount
-        月目標 
-        = @taget_amount
-        円
+        .top-page__head__box__details__amount__price
+          月目標 
+          = @taget_amount
+          円
+        .top-page__head__box__details__amount__edit
+          = link_to '#' do
+            =icon('fas', 'edit')
       .top-page__head__box__details__current
         現在の金額
         = @current_amount 

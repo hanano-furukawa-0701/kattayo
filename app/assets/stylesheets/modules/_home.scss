@@ -52,8 +52,19 @@ a {
     &__details {
       margin: 0 auto;
       &__amount {
-        font-size: 32px;
-        margin-bottom: 10px;
+        display: flex;
+        &__price {
+          font-size: 32px;
+          margin-bottom: 10px;
+        }
+        &__edit {
+          font-size: 26px;
+          padding-top: 3px;
+          margin-left: 10px;
+          a {
+            color: grey;
+          }
+        }
       }
       &__current {
         font-size: 20px;
