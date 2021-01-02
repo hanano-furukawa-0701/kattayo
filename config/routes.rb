@@ -17,10 +17,7 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :new, :create, :edit, :update, :destroy] 
 
-  scope :items do
-    resources :categories, only: [:show, :update, :destroy]
-  end
   
 
-  resources :categories, only: [:new, :create, :edit]
+  resources :categories, only: [:new, :create, :edit, :show, :update, :destroy]
 end

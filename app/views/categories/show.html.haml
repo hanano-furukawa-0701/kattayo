@@ -34,13 +34,6 @@
         .items-page__main__list__box__top-box
           .items-page__main__list__box__top-box__date
             = item.created_at.strftime('%Y/%m/%d')
-          .items-page__main__list__box__top-box__button
-            .items-page__main__list__box__top-box__button__edit
-              = link_to edit_item_path do
-                = icon('fas', 'edit')
-            .items-page__main__list__box__top-box__button__destroy
-              = link_to item_path, method: :delete do
-                = icon('fas', 'trash-alt')
         .items-page__main__list__box__name
           = item.name
         .items-page__main__list__box__price

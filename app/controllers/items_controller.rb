@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @categories = Category.order('target_amount DESC')
-    @items = Item.limit(5).order('created_at DESC')
+    @items = Item.order('created_at DESC')
   end
 
   def new
