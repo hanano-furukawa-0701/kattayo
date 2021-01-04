@@ -9,11 +9,12 @@ Rails.application.routes.draw do
     post 'target_amounts', to: 'users/registrations#create_target_amounts'
   end
 
+
   root 'home#index'
-  resources :users, only: [:edit, :update]
-
-
+  resources :users, only: [:edit, :update] 
+    
   resources :target_amounts, only: [:edit, :update]
+  
 
   resources :items, only: [:index, :new, :create, :edit, :update, :destroy] 
 
