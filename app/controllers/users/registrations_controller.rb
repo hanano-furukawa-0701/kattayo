@@ -30,22 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
   end
 
-  def edit_target_amounts
-    @target_amount = TargetAmount.where(user_id: current_user.id)
-    # @target_amount = TargetAmount.find(params[:id])
-  end
 
-  def update_target_amounts
-    @target_amount = TargetAmount.where(user_id: current_user.id).first
-    # @target_amount = TargetAmount.find(params[:id])
-    if @target_amount.update(target_amount_params)
-      redirect_to root_path
-      flash[:notice] = "変更しました"
-    else
-      render :edit
-      flash[:alert] = "変更できませんでした"
-    end
-  end
 
   private
 
@@ -54,7 +39,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def target_amount_params
-    params.require(:target_amount).permit(:price)
+    params.require(:target_amount).permit(:price).merge(user_id: current_user.id)
   end
   
 
