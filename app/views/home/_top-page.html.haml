@@ -39,7 +39,7 @@
     
 .top-page__items
   .top-page__items__title
-    購入品一覧
+    = link_to("購入品一覧", items_path) 
   .top-page__items__list
     - @items.each do |item|
       .top-page__items__list__box
