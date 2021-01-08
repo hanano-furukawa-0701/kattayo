@@ -20,6 +20,13 @@ class CategoriesController < ApplicationController
     @categories = Category.order('target_amount DESC')
     @category = Category.find(params[:id])
     @items = @category.items.order('created_at DESC')  
+    @category_current_amounts = @category.items.group("CONCAT(YEAR(created_at), MONTH(created_at))").sum(:price)
+    this_month = Date.today.all_month
+    @category_current_amounts.each do |year_month, amount|
+      if year_month = this_month
+        @category_current_amount = amount
+      end
+    end
   end
 
   def edit

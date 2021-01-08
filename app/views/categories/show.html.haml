@@ -27,7 +27,10 @@
           = @category.target_amount
           円
         .items-page__main__top-box__details__current
-          現在 5000円
+          現在 
+          -# = @category_current_amounts
+          = @category_current_amount
+          円
     .items-page__main__list
     - @items.each do |item|
       .items-page__main__list__box
