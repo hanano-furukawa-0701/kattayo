@@ -2,11 +2,9 @@ class TargetAmountsController < ApplicationController
 
   def edit
     @target_amount = TargetAmount.find_by(user_id: current_user.id)
-    # @target_amount = TargetAmount.find(params[:id])
   end
 
   def update
-    # @target_amount = TargetAmount.where(user_id: current_user.id).first
     @target_amount = TargetAmount.find(params[:id])
     if @target_amount.update(target_amount_params)
       redirect_to root_path
