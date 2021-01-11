@@ -6,7 +6,7 @@
       .top-page__head__box__details__amount
         .top-page__head__box__details__amount__price
           月目標 
-          = @taget_amount
+          = @target_amount_price
           円
         .top-page__head__box__details__amount__edit
           = link_to edit_target_amount_path(@target_amount.id) do
@@ -17,7 +17,7 @@
         円
       .top-page__head__box__details__remaining
         残り使える金額 
-        -# = @target_amount - @current_amount
+        = @target_amount_price - @current_amount
         円
 
 .top-page__categories
@@ -43,7 +43,7 @@
     
 .top-page__items
   .top-page__items__title
-    = link_to("購入品一覧", items_path) 
+    = link_to("新着購入品", items_path) 
   .top-page__items__list
     - @items.each do |item|
       .top-page__items__list__box

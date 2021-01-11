@@ -51,6 +51,7 @@ a {
     display: flex;
     &__details {
       margin: 0 auto;
+      text-align: center;
       &__amount {
         display: flex;
         &__price {
@@ -62,6 +63,7 @@ a {
           padding-top: 3px;
           margin-left: 10px;
           a {
+            padding-left: 10px;
             color: grey;
           }
         }
