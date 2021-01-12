@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   resources :target_amounts, only: [:edit, :update]
   
 
-  resources :items, only: [:index, :new, :create, :edit, :update, :destroy] 
+  resources :items, only: [:index, :new, :create, :edit, :update, :destroy]  do
+    collection do
+      get 'search'
+    end
+  end
 
   
 
