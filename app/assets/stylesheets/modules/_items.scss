@@ -36,6 +36,20 @@ li {
   &__main {
     width: 100%;
     margin: 10px 40px 85px 40px;
+    &__search-box {
+      padding: 15px 10px 25px 0;
+      &__form {
+        text-align: right;
+        input {
+          height: 35px;
+          width: 250px;
+        }
+        button {
+          height: 32px;
+          width: 40px;
+        }
+      }
+    }
     &__top-box {
       max-width: 800px;
       margin: 0 auto;
