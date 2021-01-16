@@ -24,5 +24,10 @@ Rails.application.routes.draw do
 
   
 
-  resources :categories, only: [:new, :create, :edit, :show, :update, :destroy]
+  resources :categories, only: [:new, :create, :edit, :show, :update, :destroy] do
+    member do
+      get 'search'
+    end
+  end
+  
 end

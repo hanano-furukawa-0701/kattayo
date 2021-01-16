@@ -48,6 +48,13 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def search
+    @category = Category.find(params[:id])
+    @items = @category.items.search(params[:keyword]).order('created_at DESC')
+    @categories = Category.order('target_amount DESC')
+    @category_current_amount = @items.where(created_at: Time.now.all_month).sum(:price)
+  end
+
 
   private
   def category_params
