@@ -1,0 +1,44 @@
+.header
+  = render "home/header"
+
+.items-page 
+  .items-page__left-bar
+    %ul.items-page__left-bar__categories
+    - @categories.each do |category|
+      %li
+        = link_to(category.name, category_path(category.id), class:"items-page__left-bar__categories__category")
+
+  .items-page__main
+    .items-page__main__search-box
+      = form_with(url: search_items_path, local: true, method: :get, class: "items-page__main__search-box__form") do |f|
+        = f.text_field :keyword, placeholder: "購入品を検索する"
+        %button{type:"submit",class:"search-button"}
+          = icon('fas', 'search')
+    .items-page__main__top-box 
+      .items-page__main__top-box__top-new
+        %h2.items-page__main__top-box__top-new__title 購入品一覧
+    .items-page__main__list
+      - @items.each do |item|
+        .items-page__main__list__box
+          .items-page__main__list__box__top-box
+            .items-page__main__list__box__top-box__date
+              = item.created_at.strftime('%Y/%m/%d')
+            .items-page__main__list__box__top-box__button
+              .items-page__main__list__box__top-box__button__edit
+                = link_to edit_item_path(item.id) do
+                  = icon('fas', 'edit')
+              .items-page__main__list__box__top-box__button__destroy
+                = link_to item_path(item.id), method: :delete do
+                  = icon('fas', 'trash-alt')
+          .items-page__main__list__box__name
+            = item.name
+          .items-page__main__list__box__category
+            = item.category.name
+          .items-page__main__list__box__price
+            = item.price
+            円
+          .items-pafe__main__list__box__text
+            = item.text
+
+.footer-btn
+  = render "home/footer-btn"

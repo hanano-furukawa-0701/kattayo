@@ -46,6 +46,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword]).order('created_at DESC')
+    @categories = Category.order('target_amount DESC')
+  end
+
   
   private
 
