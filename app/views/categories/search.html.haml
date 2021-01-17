@@ -12,7 +12,7 @@
   .items-page__main
     .items-page__main__search-box
       = form_with(url: search_category_path, local: true, method: :get, class: "items-page__main__search-box__form") do |f|
-        = f.text_field :keyword, placeholder: "購入品を検索する"
+        = f.text_field :keyword, placeholder: "#{@category.name}を検索する"
         %button{type:"submit",class:"search-button"}
           = icon('fas', 'search')
     .items-page__main__top-box
