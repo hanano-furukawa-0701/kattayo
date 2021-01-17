@@ -1,4 +1,5 @@
 class TargetAmountsController < ApplicationController
+  before_action :sign_in_required
 
   def edit
     @target_amount = TargetAmount.find_by(user_id: current_user.id)

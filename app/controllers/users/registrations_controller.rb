@@ -39,7 +39,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def target_amount_params
-    params.require(:target_amount).permit(:price).merge(user_id: current_user.id)
+    params.require(:target_amount).permit(:price)
   end
   
 

@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-
+  before_action :sign_in_required
+  
   def index
     @categories = Category.order('target_amount DESC')
     @items = Item.order('created_at DESC')

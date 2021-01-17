@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-
+  before_action :sign_in_required
+  
   def new
     @category = Category.new
   end

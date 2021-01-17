@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :sign_in_required
 
   def index
     @target_amount = TargetAmount.where(user_id: current_user.id).first
