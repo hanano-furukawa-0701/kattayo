@@ -6,6 +6,7 @@ a {
   text-decoration: none;
 }
 
+
 li {
   list-style: none;
 }
@@ -50,6 +51,30 @@ li {
         }
       }
     }
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 10px 25px 10px;
+      &__items-link {
+        a {
+        color: orange;
+        line-height: 35px;
+        }
+      }
+      &__search-box {
+        &__form {
+          text-align: right;
+          input {
+            height: 35px;
+            width: 250px;
+          }
+          button {
+            height: 32px;
+            width: 40px;
+          }
+        }
+      }
+    }
     &__top-box {
       max-width: 800px;
       margin: 0 auto;
@@ -67,10 +92,11 @@ li {
           display: flex;
           padding-top: 11px;
           &__edit {
-            margin-right: 5px;
+            margin-right: 10px;
           }
           a {
             color: gray;
+            font-size: 18px;
           }
         }
       }
@@ -120,6 +146,9 @@ li {
         &__category {
           a {
             color: orange;
+          }
+          a:hover {
+            text-decoration: underline;
           }
         }
       }
