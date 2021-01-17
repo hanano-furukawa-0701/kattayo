@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :sign_in_required
-  
+
   def index
-    @categories = Category.order('target_amount DESC')
-    @items = Item.order('created_at DESC')
+    @categories = current_user.categories.order('target_amount DESC')
+    @items = current_user.items.order('created_at DESC')
   end
 
   def new
@@ -48,8 +48,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword]).order('created_at DESC')
-    @categories = Category.order('target_amount DESC')
+    @items = current_user.items.search(params[:keyword]).order('created_at DESC')
+    @categories = current_user.categories.order('target_amount DESC')
   end
 
   

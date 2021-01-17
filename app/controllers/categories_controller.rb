@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :sign_in_required
-  
+
   def new
     @category = Category.new
   end
@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = Category.order('target_amount DESC')
+    @categories = current_user.categories.order('target_amount DESC')
     @category = Category.find(params[:id])
     @items = @category.items.order('created_at DESC')  
     @category_current_amount = @items.where(created_at: Time.now.all_month).sum(:price)
@@ -52,7 +52,7 @@ class CategoriesController < ApplicationController
   def search
     @category = Category.find(params[:id])
     @items = @category.items.search(params[:keyword]).order('created_at DESC')
-    @categories = Category.order('target_amount DESC')
+    @categories = current_user.categories.order('target_amount DESC')
     @category_current_amount = @items.where(created_at: Time.now.all_month).sum(:price)
   end
 
