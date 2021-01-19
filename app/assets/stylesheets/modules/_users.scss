@@ -58,6 +58,12 @@ a {
         }
       }
     }
+    &__link {
+      margin-top: 20px;
+      a {
+        color: orange;
+      }
+    }
   }
 }
 

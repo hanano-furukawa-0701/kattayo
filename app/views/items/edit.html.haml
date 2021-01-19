@@ -22,3 +22,5 @@
           = f.text_area :text, autofocus: true, autocomplete: "text", class: "content__body__details__text"
         .actions
           = f.submit "変更する"
+    .content__body__link
+      = link_to("戻る", items_path)
