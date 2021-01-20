@@ -8,7 +8,6 @@ class HomeController < ApplicationController
     @user_name = current_user.name
     @categories = current_user.categories.limit(5).order('target_amount DESC')
     @items = current_user.items.limit(5).order('created_at DESC')
-   
   end
   
 end

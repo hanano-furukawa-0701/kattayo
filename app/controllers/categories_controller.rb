@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :sign_in_required
+  before_action :set_category, only:[:show, :edit, :update, :destroy, :search]
 
   def new
     @category = Category.new
@@ -19,17 +20,14 @@ class CategoriesController < ApplicationController
 
   def show
     @categories = current_user.categories.order('target_amount DESC')
-    @category = Category.find(params[:id])
     @items = @category.items.order('created_at DESC')  
     @category_current_amount = @items.where(created_at: Time.now.all_month).sum(:price)
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
     if @category.update(category_params)
       redirect_to category_path(@category.id)
       flash[:notice] = "カテゴリー情報を変更しました"
@@ -40,7 +38,6 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
     if @category.destroy
       redirect_to root_path
       flash[:notice] = "カテゴリーを削除しました"
@@ -50,7 +47,6 @@ class CategoriesController < ApplicationController
   end
 
   def search
-    @category = Category.find(params[:id])
     @items = @category.items.search(params[:keyword]).order('created_at DESC')
     @categories = current_user.categories.order('target_amount DESC')
     @category_current_amount = @items.where(created_at: Time.now.all_month).sum(:price)
@@ -60,6 +56,10 @@ class CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit(:name, :target_amount).merge(user_id: current_user.id)
+  end
+
+  def set_category
+    @category = Category.find(params[:id])
   end
 
 end

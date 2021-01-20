@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :sign_in_required
+  before_action :set_item, only:[:edit, :update, :destroy]
 
   def index
     @categories = current_user.categories.order('target_amount DESC')
@@ -23,11 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
       flash[:notice] = "購入品情報を変更しました"
@@ -38,7 +37,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.destroy
       redirect_to items_path
       flash[:notice] = "購入品を削除しました"
@@ -57,6 +55,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :category_id, :price, :text).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
