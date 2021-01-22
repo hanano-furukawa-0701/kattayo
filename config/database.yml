@@ -47,11 +47,11 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: kattayo_production
-#   username: kattayo
-#   password: <%= ENV['KATTAYO_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: kattayo_production
+  username: kattayo
+  password: <%= ENV['KATTAYO_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
