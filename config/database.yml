@@ -49,10 +49,13 @@ test:
 #
 production:
   <<: *default
-  database: kattayo_production
-  username: kattayo
-  password: <%= ENV['KATTAYO_DATABASE_PASSWORD'] %>
   adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: db/production.postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: kattayo_production
+  username: kattayo
+  # password: <%= ENV['KATTAYO_DATABASE_PASSWORD'] %>
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: 5
 
