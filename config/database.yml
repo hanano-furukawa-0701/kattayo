@@ -52,3 +52,9 @@ production:
   database: kattayo_production
   username: kattayo
   password: <%= ENV['KATTAYO_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
