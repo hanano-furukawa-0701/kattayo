@@ -70,3 +70,5 @@ gem 'pry-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'rails-i18n'
+
+gem 'rails_12factor', group: :production

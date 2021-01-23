@@ -49,8 +49,10 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: kattayo_production
   username: kattayo
   password: <%= ENV['KATTAYO_DATABASE_PASSWORD'] %>
+  master_key: <%= ENV['RAILS_MASTER_KEY'] %>
 
 
