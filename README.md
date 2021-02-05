@@ -21,19 +21,30 @@
 ## Description
 ### ・ログイン
 ユーザーは会員登録・ログインをすることで本アプリケーションを使用することができます。
-
+<img width="1436" alt="スクリーンショット 2021-02-05 19 50 18" src="https://user-images.githubusercontent.com/65842692/107033261-62ad3180-67f8-11eb-8339-4d006d67a0b8.png">
 
 ### ・支出管理
 月間の支出予算を登録し、現時点での支出金額と残りいくら使えるのかをアナウンスします。
+<img width="1435" alt="スクリーンショット 2021-02-05 20 04 09" src="https://user-images.githubusercontent.com/65842692/107033451-abfd8100-67f8-11eb-9705-f2a3907d3508.png">
+
+### ・カテゴリー、購入品登録
+購入品のカテゴリーと購入品そのものを登録します。
+<img width="1434" alt="スクリーンショット 2021-02-05 19 53 11" src="https://user-images.githubusercontent.com/65842692/107033895-48c01e80-67f9-11eb-81bb-309d5be61de8.png">
+<img width="1438" alt="スクリーンショット 2021-02-05 19 54 54" src="https://user-images.githubusercontent.com/65842692/107033928-58d7fe00-67f9-11eb-8a89-f377b7a755b9.png">
 
 ### ・購入品管理
-カテゴリーごとに購入品を記録します。カテゴリーは自分自身で登録でき、カテゴリーごとでも支出金額を管理します。
+カテゴリーごとに購入品を記録します。また、支出金額を管理します。
+<img width="1436" alt="スクリーンショット 2021-02-05 20 04 34" src="https://user-images.githubusercontent.com/65842692/107033507-bddf2400-67f8-11eb-9e8e-0f9f4e8c377c.png">
+
 
 ### ・登録情報編集
-カテゴリーおよび購入品は編集・削除が可能です。もちろん月間支出予算も変更できます。
+カテゴリーおよび購入品は編集・削除が可能です。月間支出予算も変更できます。
+<img width="1436" alt="スクリーンショット 2021-02-05 20 12 48" src="https://user-images.githubusercontent.com/65842692/107033603-e535f100-67f8-11eb-9f86-78a2839ccdd7.png">
+
 
 ### ・購入品検索
 購入品は検索が可能です。購入したかどうかを始め、いついくらで買ったかすぐに調べることができます。カテゴリーごとでも検索が可能です。
+<img width="1436" alt="スクリーンショット 2021-02-05 20 11 30" src="https://user-images.githubusercontent.com/65842692/107033688-026abf80-67f9-11eb-85c0-11f606a7a5db.png">
 
 ## App URL
 https://kattayo.herokuapp.com/
