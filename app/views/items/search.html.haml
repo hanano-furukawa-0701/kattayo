@@ -33,7 +33,7 @@
           .items-page__main__list__box__name
             = item.name
           .items-page__main__list__box__category
-            = item.category.name
+            = link_to(item.category.name, category_path(item.category.id))
           .items-page__main__list__box__price
             = item.price
             円
